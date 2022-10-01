@@ -67,8 +67,9 @@ module.exports = {
         
         },
         services: {
-          firestore: true // Just as example. Can be any other service.
-          
+          firestore: true ,// Just as example. Can be any other service.
+          hosting: true,
+          storage: true
         }
       }
     ]
