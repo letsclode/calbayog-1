@@ -15,7 +15,6 @@
         "function": "ssrapp"
       }
     ]
-   
   },
   "functions": [
     {
@@ -27,7 +26,7 @@
         "firebase-debug.log",
         "firebase-debug.*.log"
       ],
-      "predeploy":[
+      "predeploy": [
         "npm run build && rm -rf functions/nuxt && cp -r .nuxt/ functions/nuxt/ && cp nuxt.config.js functions/"
       ]
     }
@@ -45,5 +44,8 @@
     "ui": {
       "enabled": true
     }
+  },
+  "storage": {
+    "rules": "storage.rules"
   }
 }
