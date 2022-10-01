@@ -58,7 +58,7 @@
                             <NuxtLink to="/news">News</NuxtLink>
                         </div>
                         <div class="nav-items">
-                            <NuxtLink to="/fb">Facebook Pages</NuxtLink>
+                            <NuxtLink to="/fb">Facebook Paging</NuxtLink>
                         </div>
                         <div class="nav-items">
                             <NuxtLink to="/contact">contact</NuxtLink>

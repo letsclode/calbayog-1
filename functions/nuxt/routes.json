@@ -28,6 +28,13 @@
     "_name": "_16847a58"
   },
   {
+    "name": "fb",
+    "path": "/fb",
+    "component": "/home/clode/Desktop/calbayog-1/pages/fb.vue",
+    "chunkName": "pages/fb",
+    "_name": "_138a9f34"
+  },
+  {
     "name": "news",
     "path": "/news",
     "component": "/home/clode/Desktop/calbayog-1/pages/news/index.vue",

@@ -52,16 +52,24 @@ module.exports = {
       {
         config: {
           apiKey: "AIzaSyCxPQsIHiBKejVabJHVoj8zG0x7bn4yJ08",
+
           authDomain: "calbayogapp.firebaseapp.com",
+        
           projectId: "calbayogapp",
+        
           storageBucket: "calbayogapp.appspot.com",
+        
           messagingSenderId: "1097254884850",
+        
           appId: "1:1097254884850:web:acffbf362713263d56c76b",
+        
           measurementId: "G-S5SLJR6CEM"
+        
         },
         services: {
-          firestore: true // Just as example. Can be any other service.
-          
+          firestore: true ,// Just as example. Can be any other service.
+          hosting: true,
+          storage: true
         }
       }
     ]

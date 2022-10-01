@@ -8,6 +8,7 @@ const _d04d4476 = () => interopDefault(import('../pages/about.vue' /* webpackChu
 const _0975d4d8 = () => interopDefault(import('../pages/contact.vue' /* webpackChunkName: "pages/contact" */))
 const _3e99ef5c = () => interopDefault(import('../pages/departments/index.vue' /* webpackChunkName: "pages/departments/index" */))
 const _16847a58 = () => interopDefault(import('../pages/events/index.vue' /* webpackChunkName: "pages/events/index" */))
+const _138a9f34 = () => interopDefault(import('../pages/fb.vue' /* webpackChunkName: "pages/fb" */))
 const _5a8c040e = () => interopDefault(import('../pages/news/index.vue' /* webpackChunkName: "pages/news/index" */))
 const _4c93efdc = () => interopDefault(import('../pages/events/sid2.vue' /* webpackChunkName: "pages/events/sid2" */))
 const _d7d59414 = () => interopDefault(import('../pages/news/vids.vue' /* webpackChunkName: "pages/news/vids" */))
@@ -43,6 +44,10 @@ export const routerOptions = {
     path: "/events",
     component: _16847a58,
     name: "events"
+  }, {
+    path: "/fb",
+    component: _138a9f34,
+    name: "fb"
   }, {
     path: "/news",
     component: _5a8c040e,

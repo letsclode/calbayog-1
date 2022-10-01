@@ -49,7 +49,9 @@ module.exports = {
   modules: [
     [
       '@nuxtjs/firebase',
-      {
+      { "functionstest":[
+   
+      ],
         config: {
           apiKey: "AIzaSyCxPQsIHiBKejVabJHVoj8zG0x7bn4yJ08",
 
