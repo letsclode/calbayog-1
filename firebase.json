@@ -1,13 +1,11 @@
 {
   "hosting": {
-<<<<<<< HEAD
+
     "predeploy": [
       "rm -rf public/* && mkdir -p public/_nuxt && cp -r .nuxt/dist/client/ public/_nuxt && cp -a static/. public/"
     ],
     "public": "public",
-=======
-    "public": "dist",
->>>>>>> main
+
     "ignore": [
       "firebase.json",
       "**/.*",
