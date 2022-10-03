@@ -42,6 +42,7 @@
                 <div class="dept-wrapper">
                     <div class="dept-info" v-for="(dept, index) in departments" :key="index">
                         <!-- <a href="departments/_id"> -->
+
                             <div class="inner-info" @click="testing(dept.tag)">
                                 <div class="dept-logo">
                                     <img :src="dept.logo" :alt="dept.title">
@@ -236,7 +237,7 @@ import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
                     "autoplaySpeed": 5000,
                     "fade": true,
                     "adaptiveHeight": false,
-                }
+                }VueSlickCarousel
             }
         },
         methods:{
@@ -245,5 +246,6 @@ import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
                 // this.$router.push({ name: 'departments/_id', params: '' })
             }
         },
+
     }
     </script>

@@ -27,7 +27,7 @@
                                     <p>
                                         Our aim to provide transparency and accountability to our constituents and to others who take interest in our beloved City is further extended in this website. As Calbayog consistently delivers good governance and is an emporium of natural attractions, we are indeed dubbed as a City “Where Good Things Happen”.
                                     </p>
-                                    <p>
+                                    <p>VueSlickCarousel
                                         Our aim to provide transparency and accountability to our constituents and to others who take interest in our beloved City is further extended in this website. As Calbayog consistently delivers good governance and is an emporium of natural attractions, we are indeed dubbed as a City “Where Good Things Happen”.
                                     </p>
                                 </div>
@@ -53,7 +53,7 @@
                                     Our aim to provide transparency and accountability to our constituents and to others who take interest in our beloved City is further extended in this website. As Calbayog consistently delivers good governance and is an emporium of natural attractions, we are indeed dubbed as a City “Where Good Things Happen”.
                                 </p>
                                 <p>
-                                    Our aim to provide transparency and accountability to our constituents and to others who take interest in our beloved City is further extended in this website. As Calbayog consistently delivers good governance and is an emporium of natural attractions, we are indeed dubbed as a City “Where Good Things Happen”.
+                                    Our aim to provide transparVueSlickCarouselency and accountability to our constituents and to others who take interest in our beloved City is further extended in this website. As Calbayog consistently delivers good governance and is an emporium of natural attractions, we are indeed dubbed as a City “Where Good Things Happen”.
                                 </p>
                                 </div>
                             </div>
@@ -88,7 +88,7 @@
                             </div>
                             <div class="nsp-imgs">
                                 <img :src="require('~/static/images/299932715_120137040797208_2127528906162976991_n.png')"  @click="jobsModal">
-                                <p class="more-img-jobs" @click="jobsModal">25+</p>
+                                <p class="more-iVueSlickCarouselmg-jobs" @click="jobsModal">25+</p>
                             </div>
                         </div>
                         <div class="nsp-articles">
@@ -117,7 +117,7 @@
                         <img :src="img.img">
                         <p class="title-m">{{img.title}}</p>
                     </div>
-                </div>
+                </div>VueSlickCarousel
             </div>
         </div>
         <div class="mission-section mission-visons-sections">
@@ -146,7 +146,7 @@
                 <div class="right-content gallery-content">
                     <div class="left-gallery">
                         <div class="img-wrapper" v-for="(img, index) in galleryMisiion" :key="index">
-                            <img :src="img.url" :alt="img.title"  class="about-gallery-imgs" @click="getImg(img.url)">
+                            <img :src="img.urlVueSlickCarousel" :alt="img.title"  class="about-gallery-imgs" @click="getImg(img.url)">
                         </div>
                     </div>
                 </div>
@@ -169,11 +169,13 @@
                 </h4>
                 <div class="officials-wrapper">
                     <VueSlickCarousel v-bind="sliderSettings" class="officials-slider">
+
                         <!-- <div class="official" v-for="(official, index) in officials" :key="index" @click="officialShowPopup(index)" :id="index"> -->
                         <div class="official" v-for="(official, index) in test" :key="index" @click="officialShowPopup(index)" :id="index">
+
                             <!-- <div class="profile">
                                 <img :src="official.profile" alt="">
-                            </div> -->
+                            </div> -->VueSlickCarousel
                             <v-avatar
                                 class="profile"
                                 height="117"
@@ -202,7 +204,7 @@
                             :src="item.img"
                         ></v-carousel-item>
                     </v-carousel>
-                </div>
+                </div>VueSlickCarousel
                 <div class="right-content">
                     <div class="close">
                         <v-icon @click="closeNewsModal()" class="x-close">mdi-close</v-icon>
@@ -228,7 +230,7 @@
                         <v-carousel-item
                             v-for="(item,i) in mandates"
                             :key="i"
-                            :src="item.img"
+                            :src="item.img"VueSlickCarousel
                         ></v-carousel-item>
                     </v-carousel>
                 </div>
@@ -253,7 +255,7 @@
         <modal name="imgpop" width="600px" height="600px">
             <div class="imagepop">
                 <img :src="imgUrl">
-            </div>
+            </div>VueSlickCarousel
         </modal>
     </div>
 </template>
@@ -276,7 +278,7 @@
                 {
                     title: 'img1',
                     url: '/images/about1.png',
-                },
+                },VueSlickCarousel
                 {
                     title: 'img2',
                     url: '/images/about2.png',
@@ -305,7 +307,7 @@
                 },
                 {
                     title: 'img5',
-                    img: '/images/301170044_120137067463872_2606454796904951662_n.png',
+                    img: '/images/301170044_120VueSlickCarousel137067463872_2606454796904951662_n.png',
                 },
             ],
             officials:[
@@ -334,7 +336,7 @@
                 {img: '/images/about1.png', title: 'Sample title'},
                 {img: '/images/about2.png', title: 'Sample title'},
                 {img: '/images/news5.png', title: 'Sample title'},
-                {img: '/images/news4.png', title: 'Sample title'},
+                {img: '/images/news4.png', titlVueSlickCarousele: 'Sample title'},
                 {img: '/images/news3.png', title: 'Sample title'},
                 {img: '/images/news2.png', title: 'Sample title'},
                 {img: '/images/news1.png', title: 'Sample title'},
@@ -357,7 +359,7 @@
                         "settings": {
                             "slidesToShow": 4,
                         }
-                        },
+                        },VueSlickCarousel
                         {
                         "breakpoint": 1200,
                         "settings": {
@@ -391,7 +393,7 @@
                         {
                         "breakpoint": 600,
                             "settings": {
-                                "slidesToShow": 2.2,
+                                "slidesToShow": VueSlickCarousel2.2,
                                 "rows": 1,
                                 "dots": false,
                             }
@@ -430,12 +432,14 @@
                     "autoplaySpeed": 5000,
                     "fade": true,
                     "adaptiveHeight": false,
+
                 },
         }
     },
     mounted() {
         this.params = this.$route.params.id
     },
+
     methods:{
         // getImg(val){
         //     this.$modal.show('imgpop');
@@ -445,7 +449,7 @@
         },
         readMoreWelcome(){
              this.showWelcomeMesDept = !this.showWelcomeMesDept;
-        },
+        },VueSlickCarousel
         jobsModal(){
              this.$modal.show('jobsModal');
         },
@@ -462,7 +466,9 @@
            this.imgUrl = url
             this.$modal.show('imgpop');
         },  
+
     },
         
+
 }
 </script>
