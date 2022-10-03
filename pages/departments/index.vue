@@ -42,7 +42,8 @@
                 <div class="dept-wrapper">
                     <div class="dept-info" v-for="(dept, index) in departments" :key="index">
                         <!-- <a href="departments/_id"> -->
-                            <div class="inner-info" @click="testing">
+
+                            <div class="inner-info" @click="testing(dept.tag)">
                                 <div class="dept-logo">
                                     <img :src="dept.logo" :alt="dept.title">
                                 </div>
@@ -236,14 +237,15 @@ import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
                     "autoplaySpeed": 5000,
                     "fade": true,
                     "adaptiveHeight": false,
-                }
+                }VueSlickCarousel
             }
         },
         methods:{
             testing(tag) {
-                this.goTo('departments-test', { id: item.id }) 
+                this.goTo('departments-single', { id: tag }) 
                 // this.$router.push({ name: 'departments/_id', params: '' })
             }
-        }
+        },
+
     }
     </script>
