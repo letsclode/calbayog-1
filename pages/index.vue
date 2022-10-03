@@ -122,7 +122,7 @@
             class="mobile-news"
           >
             <v-card
-              :class="activeNews == index ? 'active' : ''"
+              :class=" activeNews == index ? 'active' : ''"
               @click="newsShowPopup(index)"
               class="news-card-wrappper"
               v-for="(news, index) in newsArray"
@@ -351,321 +351,30 @@ import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import Banners from "../components/Banners.vue";
+import { news, activeNews } from "@/assets/js/news.js";
+import { events } from "@/assets/js/events.js";
+import { departments } from "@/assets/js/departments.js";
+import { services } from "@/assets/js/services.js";
+import { helplines } from "@/assets/js/helplines.js";
+import { officials } from "@/assets/js/officials.js";
 export default {
   name: "IndexPage",
   layouts: "default",
   components: { VueSlickCarousel, Banners },
+
   data() {
     return {
-      newsArray: [
-        {
-          title: "Meeting with the Federation of Pedicab Drivers of Calbayog",
-          date: "October 1, 2022",
-          description:
-            "Meeting with the Federation of Pedicab Drivers of Calbayog The members of the federation expressed their willingness to join the city in commemorating its Charter Day in October 16, 2022. They will celebrate Pedicab Drivers Day in October 14, 2022 with some series of activities. Also present during the meeting was Hon. Rosendo A. Morales, SP Chairman of the Committee on Transportation and Communications",
-          img: "/images/news/news01.jpg",
-        },
-        {
-          title:
-            "CONGRATULATIONS to the City Solid Waste Management Office for initiating BASURA CAMPAIGN today and BIG THANKS to all barangays who participated in this activity",
-          date: "September 30, 2022",
-          description:
-            'This is to commence series of activities initiated by CSWMO in line with its 25th Anniversary with the theme "Public Private Partnership Towards Saving the Environment Through Waste Minimization Approach for a Cleaner and Healthier City"',
-          img: "/images/news/news11.jpg",
-        },
-        {
-          title: "COA EXIT CONFERENCE for 60 Barangays",
-          date: "September 30, 2022",
-          description:
-            "COA EXIT CONFERENCE for 60 Barangays CY 2019-2021 @Baypark Hotel, Calbayog City",
-          img: "/images/news/coa/pic1.jpg",
-        },
-      ],
-      eventGallery: [
-        { title: "September", img: "/images/event1.png" },
-        { title: "August", img: "/images/mutyahansamar2019.png" },
-        { title: "July", img: "/images/Civic-Parade1.png" },
-        { title: "June", img: "/images/2378565_orig.png" },
-        { title: "May", img: "/images/downloadsd.png" },
-      ],
-      // agencyArray: [
-      //   {
-      //     title: 'Agriculture',
-      //     icon: '/images/Icon awesome-leaf.png',
-      //     name: 'agri',
-      //     mandate: 'The City Solid Waste Management Office was created to answer the needs towards preventing Health hazards to Human Lives and mitigating Environmental degradation. Thus, on October 10, 1997 an Ordinance No. 97-42-3682 was approved by the Sangguniang Panlungsod.',
-      //   },
-      //   {
-      //     title: 'Disaster Risk Reduction',
-      //     icon: '/images/Icon ionic-md-warning.png',
-      //     name: 'disaster',
-      //     mandate: 'The City Solid Waste Management Office was created to answer the needs towards preventing Health hazards to Human Lives and mitigating Environmental degradation. Thus, on October 10, 1997 an Ordinance No. 97-42-3682 was approved by the Sangguniang Panlungsod.',
-      //   },
-      //   {
-      //     title: 'Education',
-      //     icon: '/images/Icon awesome-graduation-cap.png',
-      //     name: 'educ',
-      //     mandate: 'The City Solid Waste Management Office was created to answer the needs towards preventing Health hazards to Human Lives and mitigating Environmental degradation. Thus, on October 10, 1997 an Ordinance No. 97-42-3682 was approved by the Sangguniang Panlungsod.',
-      //   },
-      //   {
-      //     title: 'Health',
-      //     icon: '/images/Icon awesome-briefcase-medical.png',
-      //     name: 'health',
-      //     mandate: 'The City Solid Waste Management Office was created to answer the needs towards preventing Health hazards to Human Lives and mitigating Environmental degradation. Thus, on October 10, 1997 an Ordinance No. 97-42-3682 was approved by the Sangguniang Panlungsod.',
-      //   },
-      //   {
-      //     title: 'Infrastructure Development',
-      //     icon: '/images/Icon awesome-building.png',
-      //     name: 'infra',
-      //     mandate: 'The City Solid Waste Management Office was created to answer the needs towards preventing Health hazards to Human Lives and mitigating Environmental degradation. Thus, on October 10, 1997 an Ordinance No. 97-42-3682 was approved by the Sangguniang Panlungsod.',
-      //   },
-      //   {
-      //     title: 'Peace and Order',
-      //     icon: '/images/Icon awesome-dove.png',
-      //     name: 'peace',
-      //     mandate: 'The City Solid Waste Management Office was created to answer the needs towards preventing Health hazards to Human Lives and mitigating Environmental degradation. Thus, on October 10, 1997 an Ordinance No. 97-42-3682 was approved by the Sangguniang Panlungsod.',
-      //   },
-      //   {
-      //     title: 'Poverty Alleviation',
-      //     icon: '/images/Icon open-graph.png',
-      //     name: 'pov',
-      //     mandate: 'The City Solid Waste Management Office was created to answer the needs towards preventing Health hazards to Human Lives and mitigating Environmental degradation. Thus, on October 10, 1997 an Ordinance No. 97-42-3682 was approved by the Sangguniang Panlungsod.',
-      //   },
-      //   {
-      //     title: 'Solid Waste Management',
-      //     icon: '/images/Icon awesome-recycle.png',
-      //     name: 'waste',
-      //     mandate: 'The City Solid Waste Management Office was created to answer the needs towards preventing Health hazards to Human Lives and mitigating Environmental degradation. Thus, on October 10, 1997 an Ordinance No. 97-42-3682 was approved by the Sangguniang Panlungsod.',
-      //   },
-      //   {
-      //     title: 'Tourism',
-      //     icon: '/images/Icon awesome-umbrella-beach.png',
-      //     name: 'tourism',
-      //     mandate: 'The City Solid Waste Management Office was created to answer the needs towards preventing Health hazards to Human Lives and mitigating Environmental degradation. Thus, on October 10, 1997 an Ordinance No. 97-42-3682 was approved by the Sangguniang Panlungsod.',
-      //   },
-      //   {
-      //     title: 'Transportation Planning and Traffic Management',
-      //     icon: '/images/Icon awesome-traffic-light.png',
-      //     name: 'transpo',
-      //     mandate: 'The City Solid Waste Management Office was created to answer the needs towards preventing Health hazards to Human Lives and mitigating Environmental degradation. Thus, on October 10, 1997 an Ordinance No. 97-42-3682 was approved by the Sangguniang Panlungsod.',
-      //   },
-      // ],
-      agencyArray: [
-        {
-          title: "CITY MAYOR`S OFFICE",
-          icon: "/images/Icon awesome-leaf.png",
-          name: "agri",
-          mandate:
-            "The Mayor`s Office Operation coordinates and oversees the management of city governmental operations to promote the efficient and effective delivery of agency services. The office mandate to both provide the operational support for all agencies as well as measure and report on agency performance. Operations helps City agencies to improve productivity by providing recommendations and institutional support in addition to reporting areas of success and identifying the areas of possible improvement.",
-        },
-        {
-          title: "Disaster Risk Reduction",
-          icon: "/images/Icon ionic-md-warning.png",
-          name: "disaster",
-          mandate:
-            "The office is tasked to conduct and organized disaster preparedness activities to save lives and properties.",
-        },
-        {
-          title: "CITY HOUSING AND DEVELOPMENT",
-          icon: "/images/Icon awesome-graduation-cap.png",
-          name: "educ",
-          mandate:
-            "Formulate plans and program applicable to the Housing Program of the city based on RA 7279 or otherwise known as Urban Development and Housing Act of 1992",
-        },
-        {
-          title: "Business Permits and Licensing",
-          icon: "/images/Icon awesome-briefcase-medical.png",
-          name: "health",
-          mandate:
-            "In charge of the business permitting and licensing on private commercial, industrial and other business establishments within the jurisdiction of the local government unit in relation to the implementation of tax ordinances pursuant to the provisions provided under Book II of RA # 7160 otherwise known as the Local Government Code of 1991",
-        },
-        {
-          title: "SANGGUNIANG PANLUNGSOD",
-          icon: "/images/Icon awesome-building.png",
-          name: "infra",
-          mandate:
-            "Appropriate Funds for expenses of the City Government in accordance with law.",
-        },
-        {
-          title: "CITY ADMINISTRATOR",
-          icon: "/images/Icon awesome-dove.png",
-          name: "peace",
-          mandate:
-            "Develop management and administrative-related plans and strategies upon approval of the LCE/Delivery of administrative services during and after man-made and natural disasters and calamities.",
-        },
-        {
-          title: "City Civil Registrar",
-          icon: "/images/Icon open-graph.png",
-          name: "pov",
-          mandate:
-            "Records all vital occurrences of a person, natural or through judicial order, in civil registry forms and books required by law and file, compile, keep and preserve these documents in secure place.",
-        },
-        {
-          title: "Solid Waste Management",
-          icon: "/images/Icon awesome-recycle.png",
-          name: "waste",
-          mandate:
-            "The City Solid Waste Management Office was created to answer the needs towards preventing Health hazards to Human Lives and mitigating Environmental degradation. Thus, on October 10, 1997 an Ordinance No. 97-42-3682 was approved by the Sangguniang Panlungsod.",
-        },
-        {
-          title: "CITY GENERAL SERVICES",
-          icon: "/images/Icon awesome-umbrella-beach.png",
-          name: "tourism",
-          mandate:
-            "The City General Services Office was formally created and established in 1993 by virtue of Local Government Code of 1991 or RA. 7160, empowering local government units or decentralizing government&#39;s operation.",
-        },
-        {
-          title: "City Budget Office",
-          icon: "/images/Icon awesome-traffic-light.png",
-          name: "transpo",
-          mandate:
-            "Provide periodic review and disclosure of budgetary status of the Local Government",
-        },
-      ],
-      servicesArray: [
-        {
-          url: "https://www.bir.gov.ph/",
-          icon: "/images/Bureau_of_Internal_Revenue_(BIR).svg.png",
-        },
-        { url: "https://www.prc.gov.ph/", icon: "/images/g7646.png" },
-        {
-          url: "https://www.gsis.gov.ph/",
-          icon: "/images/Government_Service_Insurance_System_(Philippines)_(logo).svg.png",
-        },
-        {
-          url: "http://www.csc.gov.ph/",
-          icon: "/images/Civil_Service_Commission.svg.png",
-        },
-        { url: "https://www.sss.gov.ph/", icon: "/images/sss-logo-medium.png" },
-        {
-          url: "https://www.philhealth.gov.ph/",
-          icon: "/images/Www.philhealth.gov.ph.png",
-        },
-      ],
-      helpLines: [
-        { name: "Mayor Office", hotline: "0000-0000" },
-        { name: "City Council", hotline: "0000-0000" },
-        { name: "Police Emergency", hotline: "0000-0000" },
-        { name: "Ambulance", hotline: "0000-0000" },
-        { name: "E-Service", hotline: "0000-0000" },
-      ],
+      newsArray: news,
+      eventGallery: events,
+      agencyArray: departments,
+      servicesArray: services,
+      helpLines: helplines,
       activeNews: "",
       showWelcomeMessage: false,
       items: [],
       limitationList: 3,
       screenWidth: 0,
-      officials: [
-        {
-          name: "Hon. Raymund C. Uy",
-          position: "Calbayog City Mayor",
-          profile: "/images/cm.png",
-        },
-        {
-          name: "Jaynard Monterona",
-          position: "Damdamin ng Bayan",
-          profile: "/images/cm.png",
-        },
-        {
-          name: "Hon. Raymund C. Uy",
-          position: "Calbayog City Mayor",
-          profile: "/images/cm.png",
-        },
-        {
-          name: "Jaynard Monterona",
-          position: "Damdamin ng Bayan",
-          profile: "/images/cm.png",
-        },
-        {
-          name: "Hon. Raymund C. Uy",
-          position: "Calbayog City Mayor",
-          profile: "/images/cm.png",
-        },
-        {
-          name: "Jaynard Monterona",
-          position: "Damdamin ng Bayan",
-          profile: "/images/cm.png",
-        },
-        {
-          name: "Hon. Raymund C. Uy",
-          position: "Calbayog City Mayor",
-          profile: "/images/cm.png",
-        },
-        {
-          name: "Jaynard Monterona",
-          position: "Damdamin ng Bayan",
-          profile: "/images/cm.png",
-        },
-        {
-          name: "Hon. Raymund C. Uy",
-          position: "Calbayog City Mayor",
-          profile: "/images/cm.png",
-        },
-        {
-          name: "Jaynard Monterona",
-          position: "Damdamin ng Bayan",
-          profile: "/images/cm.png",
-        },
-        {
-          name: "Hon. Raymund C. Uy",
-          position: "Calbayog City Mayor",
-          profile: "/images/cm.png",
-        },
-        {
-          name: "Jaynard Monterona",
-          position: "Damdamin ng Bayan",
-          profile: "/images/cm.png",
-        },
-        {
-          name: "Hon. Raymund C. Uy",
-          position: "Calbayog City Mayor",
-          profile: "/images/cm.png",
-        },
-        {
-          name: "Jaynard Monterona",
-          position: "Damdamin ng Bayan",
-          profile: "/images/cm.png",
-        },
-        {
-          name: "Hon. Raymund C. Uy",
-          position: "Calbayog City Mayor",
-          profile: "/images/cm.png",
-        },
-        {
-          name: "Jaynard Monterona",
-          position: "Damdamin ng Bayan",
-          profile: "/images/cm.png",
-        },
-        {
-          name: "Hon. Raymund C. Uy",
-          position: "Calbayog City Mayor",
-          profile: "/images/cm.png",
-        },
-        {
-          name: "Jaynard Monterona",
-          position: "Damdamin ng Bayan",
-          profile: "/images/cm.png",
-        },
-        {
-          name: "Hon. Raymund C. Uy",
-          position: "Calbayog City Mayor",
-          profile: "/images/cm.png",
-        },
-        {
-          name: "Jaynard Monterona",
-          position: "Damdamin ng Bayan",
-          profile: "/images/cm.png",
-        },
-        {
-          name: "Hon. Raymund C. Uy",
-          position: "Calbayog City Mayor",
-          profile: "/images/cm.png",
-        },
-        {
-          name: "Jaynard Monterona",
-          position: "Damdamin ng Bayan",
-          profile: "/images/cm.png",
-        },
-      ],
+      officials: officials,
       sliderSettings: {
         dots: true,
         dotsClass: "slick-dots custom-dot-class",
@@ -785,6 +494,8 @@ export default {
   methods: {
     newsShowPopup(val) {
       this.activeNews = val;
+      activeNews = val;
+      console.log(activeNews);
       this.$modal.show("newsModal");
     },
     closeNewsModal() {
