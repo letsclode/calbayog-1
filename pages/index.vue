@@ -376,8 +376,9 @@ export default {
         {
           title: "COA EXIT CONFERENCE for 60 Barangays",
           date: "September 30, 2022",
-          description: "@Baypark Hotel, Calbayog City",
-          img: "/images/news/news11.jpg",
+          description:
+            "COA EXIT CONFERENCE for 60 Barangays CY 2019-2021 @Baypark Hotel, Calbayog City",
+          img: "/images/news/coa/pic1.jpg",
         },
       ],
       eventGallery: [
