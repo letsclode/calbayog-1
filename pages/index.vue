@@ -94,7 +94,7 @@
                   <v-img
                     height="210"
                     class="news-card-img"
-                    :src="news.img"
+                    :src="news.images[0]"
                   ></v-img>
                   <v-card-text class="news-content-wrapper">
                     <p class="news-date">{{news.date}}</p>
@@ -132,7 +132,7 @@
                 <v-img
                   height="auto"
                   class="news-card-img"
-                  :src="news.img"
+                  :src="news.images[0]"
                 ></v-img>
                 <v-card-text class="news-content-wrapper">
                   <p class="news-date">{{news.date}}</p>
@@ -351,7 +351,7 @@ import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import Banners from "../components/Banners.vue";
-import { news, activeNews } from "@/assets/js/news.js";
+import { news, setSelected } from "@/assets/js/news.js";
 import { events } from "@/assets/js/events.js";
 import { departments } from "@/assets/js/departments.js";
 import { services } from "@/assets/js/services.js";
@@ -369,6 +369,7 @@ export default {
       servicesArray: services,
       helpLines: helplines,
       activeNews: "",
+
       showWelcomeMessage: false,
       items: [],
       limitationList: 3,
@@ -493,8 +494,7 @@ export default {
   methods: {
     newsShowPopup(val) {
       this.activeNews = val;
-      activeNews = val;
-      console.log(activeNews);
+      setSelected(val);
       this.$modal.show("newsModal");
     },
     closeNewsModal() {
