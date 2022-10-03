@@ -361,6 +361,7 @@ export default {
   name: "IndexPage",
   layouts: "default",
   components: { VueSlickCarousel, Banners },
+
   data() {
     return {
       newsArray: news,
@@ -495,6 +496,7 @@ export default {
     newsShowPopup(val) {
       this.activeNews = val;
       setSelected(val);
+      console.log(val);
       this.$modal.show("newsModal");
     },
     closeNewsModal() {

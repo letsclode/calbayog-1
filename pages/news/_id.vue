@@ -112,6 +112,7 @@ export default {
   name: "IndexPage",
   layouts: "default",
   components: { VueSlickCarousel },
+
   data() {
     return {
       selectedNewsIndex: selectedNewsIndex,
