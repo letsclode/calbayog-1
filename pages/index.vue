@@ -85,7 +85,7 @@
             <template>
               <v-card
                 :class="activeNews == index ? 'active' : ''"
-                @click="newsShowPopup(index)"
+                @click="newsShowPopup(activeNews, index)"
                 class="news-card-wrappper"
                 v-for="(news, index) in newsArray"
                 :key="index"
@@ -492,10 +492,11 @@ export default {
   //   window.removeEventListener("scroll", this.onScroll)
   // },
   methods: {
-    newsShowPopup(val) {
-      this.activeNews = val;
+    newsShowPopup(val, val2) {
+      this.activeNews = val2;
       activeNews = val;
-      console.log(activeNews);
+
+      console.log("Here: " + activeNews.title);
       this.$modal.show("newsModal");
     },
     closeNewsModal() {
