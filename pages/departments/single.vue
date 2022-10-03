@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="banner-wrapper small-banner">
+        <div class="banner-wrapper">
             <!-- <img :src="require('~/static/images/Calbayog.png')"  alt=""> -->
             <VueSlickCarousel v-bind="sliderHeader" class="officials-slider">
                 <img :src="item.img"  alt=""  v-for="(item,i) in headerCarousel" :key="i">
