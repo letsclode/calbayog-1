@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   // Target: https://go.nuxtjs.dev/config-target
 
   generate: {
@@ -48,6 +48,29 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    [
+      '@nuxtjs/axios',
+      '@nuxt/http',
+      '@nuxtjs/firebase',
+      '@nuxtjs/firebase-admin',
+      
+      { "function":[],
+        config: {
+          apiKey: "AIzaSyCxPQsIHiBKejVabJHVoj8zG0x7bn4yJ08",
+          authDomain: "calbayogapp.firebaseapp.com",
+          projectId: "calbayogapp",
+          storageBucket: "calbayogapp.appspot.com",
+          messagingSenderId: "1097254884850",
+          appId: "1:1097254884850:web:acffbf362713263d56c76b",
+          measurementId: "G-S5SLJR6CEM"
+        },
+        services: {
+          firestore: true ,// Just as example. Can be any other service.
+          hosting: true,
+          storage: true
+        }
+      }
+    ]
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -56,5 +79,8 @@ export default {
   pageTransition: {
     name: 'my-page',
     mode: 'out-in'
-}
+},
+
+
+
 }

@@ -19,54 +19,41 @@
         <div class="title-search-wrapper">
           <h3>Activities Post</h3>
           <!-- <form action="#">
-                        <div class="search-wrapper">
-                            <button type="submit">
-                                <img :src="require('~/static/images/Icon-search.png')">
-                            </button>
-                            <input type="text" class="search-input">
-                        </div>
-                    </form> -->
+                      <div class="search-wrapper">
+                          <button type="submit">
+                              <img :src="require('~/static/images/Icon-search.png')">
+                          </button>
+                          <input type="text" class="search-input">
+                      </div>
+                  </form> -->
         </div>
         <div class="nsp-content">
           <div class="full-img">
             <img
-              :src="activeNews.img"
+              :src="newsArray[selectedNewsIndex].images[0]"
               @click="newsShowPopup"
             >
           </div>
           <div class="grid-img">
-            <div class="nsp-imgs">
+            <div
+              class="nsp-imgs"
+              v-for="(item,i) in newsArray[selectedNewsIndex].images"
+              :key="i"
+            >
               <img
-                :src="require('~/static/images/news2.png')"
+                :src="item"
                 @click="newsShowPopup"
               >
             </div>
-            <div class="nsp-imgs">
-              <img
-                :src="require('~/static/images/news3.png')"
-                @click="newsShowPopup"
-              >
-            </div>
-            <div class="nsp-imgs">
-              <img
-                :src="require('~/static/images/news4.png')"
-                @click="newsShowPopup"
-              >
-              <p
-                class="more-img-jobs"
-                @click="newsShowPopup"
-              >25+</p>
-            </div>
+
           </div>
           <div class="nsp-articles">
             <div class="header">
-              <h5 class="title">Graduation Cerimony</h5>
-              <p class="date">15 JULY, 2022</p>
+              <h5 class="title">{{ newsArray[selectedNewsIndex].title }}</h5>
+              <p class="date">{{ newsArray[selectedNewsIndex].date }}</p>
             </div>
             <div class="desc">
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+              <p>{{ newsArray[selectedNewsIndex].description }}
               </p>
             </div>
           </div>
@@ -81,9 +68,9 @@
           <div class="images-slider">
             <v-carousel class="news-slider-img">
               <v-carousel-item
-                v-for="(item,i) in newsArray"
+                v-for="(item,i) in newsArray[selectedNewsIndex].images"
                 :key="i"
-                :src="item.img"
+                :src="item"
               ></v-carousel-item>
             </v-carousel>
           </div>
@@ -96,15 +83,15 @@
             </div>
             <div class="title-close-wrapper">
               <h3 class="title">
-                {{ activeNews.title }}
+                {{ newsArray[selectedNewsIndex].title }}
               </h3>
               <div class="date-info">
-                <p>{{ activeNews.date }}</p>
+                <p>{{ newsArray[selectedNewsIndex].date }}</p>
               </div>
             </div>
             <div class="news-modal-content">
               <div class="news-description">
-                <p>{{ activeNews.description }}
+                <p>{{ newsArray[selectedNewsIndex].description }}
                 </p>
               </div>
             </div>
@@ -118,16 +105,18 @@
 <script>
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
+// optional style for arrows & dots
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
-import { news, activeNews } from "@/assets/js/news.js";
+import { news, selectedNewsIndex } from "@/assets/js/news.js";
 export default {
   name: "IndexPage",
   layouts: "default",
   components: { VueSlickCarousel },
+
   data() {
     return {
+      selectedNewsIndex: selectedNewsIndex,
       newsArray: news,
-      activeNews: activeNews,
       headerCarousel: [
         { title: "Cathedral", img: "/images/Calbayog.png" },
         { title: "Falls", img: "/images/calbcover.png" },

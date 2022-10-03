@@ -1,6 +1,15 @@
 {
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
     "githubPullRequests.ignoredPullRequestBranches": [
         "main"
     ],
+>>>>>>> main
+=======
+    "githubPullRequests.ignoredPullRequestBranches": [
+        "main"
+    ],
+>>>>>>> main
     "nuxt.isNuxtApp": true
 }

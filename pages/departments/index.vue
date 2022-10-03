@@ -64,7 +64,8 @@
             <div
               class="inner-info"
               @click="testing(dept.tag)"
-            >
+            >>>>>>> main
+              >
               <div class="dept-logo">
                 <img
                   :src="dept.logo"
