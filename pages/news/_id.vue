@@ -30,7 +30,11 @@
         <div class="nsp-content">
           <div class="full-img">
             <img
+<<<<<<< HEAD
               :src=activeNews.img
+=======
+              :src="activeNews.img"
+>>>>>>> main
               @click="newsShowPopup"
             >
           </div>
@@ -60,7 +64,11 @@
           </div>
           <div class="nsp-articles">
             <div class="header">
+<<<<<<< HEAD
               <h5 class="title">{{ activeNews.title }}</h5>
+=======
+              <h5 class="title">Graduation Cerimony</h5>
+>>>>>>> main
               <p class="date">15 JULY, 2022</p>
             </div>
             <div class="desc">
@@ -127,7 +135,10 @@ export default {
   data() {
     return {
       newsArray: news,
+<<<<<<< HEAD
       activeNewsIndex: "",
+=======
+>>>>>>> main
       activeNews: activeNews,
       headerCarousel: [
         { title: "Cathedral", img: "/images/Calbayog.png" },
@@ -151,7 +162,11 @@ export default {
   mounted() {},
   methods: {
     newsShowPopup(val) {
+<<<<<<< HEAD
       this.activeNewsIndex = val;
+=======
+      this.activeNews = val;
+>>>>>>> main
       this.$modal.show("newsModal");
     },
     closeNewsModal() {

@@ -60,10 +60,12 @@
             :key="index"
           >
             <!-- <a href="departments/_id"> -->
+
             <div
               class="inner-info"
-              @click="testing"
-            >
+              @click="testing(dept.tag)"
+            >>>>>>> main
+              >
               <div class="dept-logo">
                 <img
                   :src="dept.logo"
