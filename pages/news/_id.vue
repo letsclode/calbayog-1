@@ -19,22 +19,18 @@
         <div class="title-search-wrapper">
           <h3>Activities Post</h3>
           <!-- <form action="#">
-                        <div class="search-wrapper">
-                            <button type="submit">
-                                <img :src="require('~/static/images/Icon-search.png')">
-                            </button>
-                            <input type="text" class="search-input">
-                        </div>
-                    </form> -->
+                      <div class="search-wrapper">
+                          <button type="submit">
+                              <img :src="require('~/static/images/Icon-search.png')">
+                          </button>
+                          <input type="text" class="search-input">
+                      </div>
+                  </form> -->
         </div>
         <div class="nsp-content">
           <div class="full-img">
             <img
-<<<<<<< HEAD
-              :src=activeNews.img
-=======
-              :src="activeNews.img"
->>>>>>> main
+              :src="require('~/static/images/Mask Group 2.png')"
               @click="newsShowPopup"
             >
           </div>
@@ -64,11 +60,7 @@
           </div>
           <div class="nsp-articles">
             <div class="header">
-<<<<<<< HEAD
-              <h5 class="title">{{ activeNews.title }}</h5>
-=======
               <h5 class="title">Graduation Cerimony</h5>
->>>>>>> main
               <p class="date">15 JULY, 2022</p>
             </div>
             <div class="desc">
@@ -104,15 +96,16 @@
             </div>
             <div class="title-close-wrapper">
               <h3 class="title">
-                {{ activeNews.title }}
+                Graduation Ceremony
               </h3>
               <div class="date-info">
-                <p>{{ activeNews.date }}</p>
+                <p>15 JULY, 2022</p>
               </div>
             </div>
             <div class="news-modal-content">
               <div class="news-description">
-                <p>{{ activeNews.description }}
+                <p>Tumambong Si Calbayog City Mayor Raymund Monmon Uy san graduation ceremony san 123 nga mga bag-o nga graduate san Philippine Army sa camp Vicente,
+                  Tumambong Si Calbayog City Mayor Raymund Monmon Uy san graduation ceremony san 123 nga mga bag-o nga graduate san Philippine Army sa camp Vicente
                 </p>
               </div>
             </div>
@@ -126,20 +119,51 @@
 <script>
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
+// optional style for arrows & dots
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
-import { news, activeNews } from "@/assets/js/news.js";
 export default {
   name: "IndexPage",
   layouts: "default",
   components: { VueSlickCarousel },
   data() {
     return {
-      newsArray: news,
-<<<<<<< HEAD
-      activeNewsIndex: "",
-=======
->>>>>>> main
-      activeNews: activeNews,
+      newsArray: [
+        {
+          title: "Graduation Ceremony",
+          date: "15 JULY, 2022",
+          description:
+            "Tumambong Si Calbayog City Mayor Raymund Monmon Uy san graduation ceremony san 123 nga mga bag-o nga graduate san Philippine Army sa camp Vicente Lucban,  Brgy. Maulong, Catbalogan.",
+          img: "/images/Mask Group 2.png",
+        },
+        {
+          title: "Graduation Ceremony",
+          date: "15 JULY, 2022",
+          description:
+            "Tumambong Si Calbayog City Mayor Raymund Monmon Uy san graduation ceremony san 123 nga mga bag-o nga graduate san Philippine Army sa camp Vicente Lucban,  Brgy. Maulong, Catbalogan.",
+          img: "/images/news2.png",
+        },
+        {
+          title: "Graduation Ceremony",
+          date: "15 JULY, 2022",
+          description:
+            "Tumambong Si Calbayog City Mayor Raymund Monmon Uy san graduation ceremony san 123 nga mga bag-o nga graduate san Philippine Army sa camp Vicente Lucban,  Brgy. Maulong, Catbalogan.",
+          img: "/images/news3.png",
+        },
+        {
+          title: "Graduation Ceremony",
+          date: "15 JULY, 2022",
+          description:
+            "Tumambong Si Calbayog City Mayor Raymund Monmon Uy san graduation ceremony san 123 nga mga bag-o nga graduate san Philippine Army sa camp Vicente Lucban,  Brgy. Maulong, Catbalogan.",
+          img: "/images/news5.png",
+        },
+        {
+          title: "Graduation Ceremony",
+          date: "15 JULY, 2022",
+          description:
+            "Tumambong Si Calbayog City Mayor Raymund Monmon Uy san graduation ceremony san 123 nga mga bag-o nga graduate san Philippine Army sa camp Vicente Lucban,  Brgy. Maulong, Catbalogan.",
+          img: "/images/news2.png",
+        },
+      ],
       headerCarousel: [
         { title: "Cathedral", img: "/images/Calbayog.png" },
         { title: "Falls", img: "/images/calbcover.png" },
@@ -162,11 +186,7 @@ export default {
   mounted() {},
   methods: {
     newsShowPopup(val) {
-<<<<<<< HEAD
-      this.activeNewsIndex = val;
-=======
       this.activeNews = val;
->>>>>>> main
       this.$modal.show("newsModal");
     },
     closeNewsModal() {

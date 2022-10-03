@@ -361,7 +361,6 @@ export default {
   name: "IndexPage",
   layouts: "default",
   components: { VueSlickCarousel, Banners },
-
   data() {
     return {
       newsArray: news,
@@ -507,7 +506,6 @@ export default {
     // onScroll(e) {
     //   this.windowTop = window.top.scrollY /* or: e.target.documentElement.scrollTop */
     //   if(this.windowTop >= 2000){
-
     //   }
     // }
   },
